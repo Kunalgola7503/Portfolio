@@ -16,8 +16,6 @@ If you want it at `https://<your-username>.github.io/` directly (no repo name in
 ## To-do before launch
 - [x] Add `Kunal_Gola_Resume.pdf` to the root (Done!)
 - [x] Swap in real project links on GitHub (Done!)
-- [ ] Certification images: once you send them, they can replace the current text-only cert pills with actual badge graphics
-- [ ] Double check phone/email are okay to have public before pushing
 
 ## Structure
 ```
