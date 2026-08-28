@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kunal Gola — Data Analyst Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0f172a;
+    --accent: #2563eb;
+    --text: #1e293b;
+    --text-muted: #475569;
+    --border: #cbd5e1;
+    --bg-badge: #f1f5f9;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background-color: #f8fafc;
+    line-height: 1.45;
+    font-size: 10pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .resume-container {
+    max-width: 850px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 40px 48px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+  }
+
+  /* Header */
+  header {
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 14px;
+    margin-bottom: 16px;
+  }
+
+  .name {
+    font-size: 24pt;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--primary);
+    text-transform: uppercase;
+  }
+
+  .title {
+    font-size: 12pt;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 2px;
+    margin-bottom: 8px;
+  }
+
+  .contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    font-size: 9pt;
+    color: var(--text-muted);
+  }
+
+  .contact-bar a {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+
+  .contact-bar a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  .contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* Section Styling */
+  section {
+    margin-bottom: 15px;
+  }
+
+  .section-heading {
+    font-size: 11pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--primary);
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 3px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  p.summary {
+    font-size: 9.5pt;
+    color: var(--text);
+    text-align: justify;
+    line-height: 1.45;
+  }
+
+  /* Skills Grid */
+  .skills-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+    font-size: 9.2pt;
+  }
+
+  .skill-line {
+    display: flex;
+    gap: 6px;
+  }
+
+  .skill-label {
+    font-weight: 600;
+    color: var(--primary);
+    min-width: 175px;
+    flex-shrink: 0;
+  }
+
+  .skill-values {
+    color: var(--text);
+  }
+
+  /* Entries: Experience / Projects / Education */
+  .entry {
+    margin-bottom: 11px;
+  }
+
+  .entry:last-child {
+    margin-bottom: 0;
+  }
+
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+
+  .entry-title {
+    font-size: 10pt;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .entry-org {
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .entry-date {
+    font-size: 8.8pt;
+    font-weight: 500;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .entry-subtitle {
+    font-size: 9pt;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .tech-stack-tag {
+    font-style: normal;
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  ul.entry-bullets {
+    padding-left: 17px;
+    margin-top: 3px;
+  }
+
+  ul.entry-bullets li {
+    font-size: 9.2pt;
+    color: var(--text);
+    margin-bottom: 3px;
+    line-height: 1.4;
+  }
+
+  ul.entry-bullets li strong {
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  /* Certifications List */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 16px;
+    font-size: 9pt;
+  }
+
+  .cert-item {
+    position: relative;
+    padding-left: 12px;
+  }
+
+  .cert-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+  }
+
+  /* Print Controls */
+  .print-bar {
+    max-width: 850px;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0f172a;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 9.5pt;
+  }
+
+  .btn-print {
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 8px 18px;
+    font-size: 9.5pt;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .btn-print:hover {
+    background: #1d4ed8;
+  }
+
+  @media print {
+    body {
+      background: #ffffff;
+      font-size: 9.5pt;
+    }
+
+    .print-bar {
+      display: none !important;
+    }
+
+    .resume-container {
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    @page {
+      margin: 10mm 12mm 10mm 12mm;
+      size: A4 portrait;
+    }
+
+    .entry {
+      page-break-inside: avoid;
+    }
+
+    section {
+      page-break-inside: auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="print-bar">
+  <span>💡 <strong>Tip:</strong> Click "Save / Print as PDF" to export as <code>Kunal_Gola_Resume.pdf</code> (select <em>Save as PDF</em>, set Margins to <em>Default</em>).</span>
+  <button class="btn-print" onclick="window.print()">Save / Print as PDF 🖨️</button>
+</div>
+
+<div class="resume-container">
+
+  <!-- HEADER -->
+  <header>
+    <div class="name">KUNAL GOLA</div>
+    <div class="title">Data & Business Analyst</div>
+    <div class="contact-bar">
+      <span class="contact-item">📍 Agra, UP, India</span>
+      <span class="contact-item">✉️ <a href="mailto:Kunalgola7703@gmail.com">Kunalgola7703@gmail.com</a></span>
+      <span class="contact-item">📞 +91 7055287170</span>
+      <span class="contact-item">🔗 <a href="https://www.linkedin.com/in/kunal-gola-025481313/" target="_blank">linkedin.com/in/kunal-gola-025481313</a></span>
+      <span class="contact-item">💻 <a href="https://github.com/Kunalgola7503" target="_blank">github.com/Kunalgola7503</a></span>
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <section>
+    <div class="section-heading">Professional Summary</div>
+    <p class="summary">
+      Business-focused <strong>Data & Business Analyst</strong> with proven expertise in translating complex data into strategic business decisions, KPI frameworks, and interactive dashboards. Skilled in <strong>SQL (CTEs, Window Functions, Joins)</strong>, <strong>Python (Pandas, NumPy, Scikit-learn)</strong>, <strong>Power BI (DAX, Power Query)</strong>, <strong>Tableau</strong>, and <strong>Advanced Excel</strong>. Demonstrated track record of identifying growth opportunities and operational efficiencies—including a <strong>+121% conversion lift via A/B testing</strong> and customer churn reduction analytics. Formally trained at <strong>BITSoM</strong> in Business Analytics with Gen & Agentic AI, with strong experience in stakeholder requirement gathering and executive data storytelling.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <div class="section-heading">Technical Skills</div>
+    <div class="skills-list">
+      <div class="skill-line">
+        <span class="skill-label">Programming & Querying:</span>
+        <span class="skill-values">Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn), SQL (PostgreSQL, MySQL, CTEs, Window Functions, Joins), DuckDB</span>
+      </div>
+      <div class="skill-line">
+        <span class="skill-label">BI & Visualization:</span>
+        <span class="skill-values">Power BI (DAX Measures, Data Modeling, Power Query ETL, KPI Dashboards), Tableau (Calculated Fields, LOD Expressions), Advanced Excel (Pivot Tables, XLOOKUP)</span>
+      </div>
+      <div class="skill-line">
+        <span class="skill-label">Analytics & Methods:</span>
+        <span class="skill-values">Exploratory Data Analysis (EDA), Hypothesis & A/B Testing, Predictive Modeling (Regression, Classification), Churn Analysis, Cohort Analysis</span>
+      </div>
+      <div class="skill-line">
+        <span class="skill-label">AI & Emerging Tools:</span>
+        <span class="skill-values">Generative AI, Agentic AI Workflows, LLM Prompt Engineering, Google Gemini API/SDK, Git/GitHub, RDBMS Schema Design</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <div class="section-heading">Professional Experience</div>
+    
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Data Analytics Intern</span>
+        <span class="entry-date">07/2025 – 12/2025</span>
+      </div>
+      <div class="entry-subtitle">
+        <span class="entry-org">CETPA Infotech Pvt. Ltd. — Noida, India</span>
+        <span>On-site</span>
+      </div>
+      <ul class="entry-bullets">
+        <li>Developed an end-to-end <strong>Power BI Sales Performance Dashboard</strong> tracking Total Revenue, Profit Margins, and Regional Performance across multiple product categories.</li>
+        <li>Authored <strong>15+ custom DAX measures</strong> (Time Intelligence, YoY growth, running totals) and streamlined Power Query ETL pipelines, reducing report preparation cycle time by <strong>~30%</strong>.</li>
+        <li>Authored complex <strong>SQL queries</strong> utilizing multi-table joins, subqueries, and window functions to extract, clean, and validate transactional records from relational database schemas.</li>
+        <li>Collaborated with cross-functional team members to translate ambiguous business requirements into dynamic KPI scorecards and actionable executive reports.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Data Analytics Intern</span>
+        <span class="entry-date">09/2025 – 12/2025</span>
+      </div>
+      <div class="entry-subtitle">
+        <span class="entry-org">Codec Technologies Pvt. Ltd.</span>
+        <span>Remote</span>
+      </div>
+      <ul class="entry-bullets">
+        <li>Conducted rigorous exploratory data analysis (EDA) and data cleansing on telecom customer datasets to uncover primary churn risk indicators across contract type, tenure, and payment methods.</li>
+        <li>Trained, benchmarked, and evaluated classification algorithms (Logistic Regression, Random Forest, and Gradient Boosting), selecting <strong>Gradient Boosting</strong> as the top-performing model for customer retention scoring.</li>
+        <li>Engineered an interactive <strong>Power BI Churn Risk Dashboard</strong> with dynamic slicing and drill-down metrics, enabling customer retention teams to prioritize high-risk accounts.</li>
+        <li>Synthesized analytical insights into data storytelling decks and presented retention recommendations to stakeholders.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section>
+    <div class="section-heading">Key Analytics Projects</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Retail Sales Analysis, A/B Testing & Predictive Dashboarding</span>
+        <span class="tech-stack-tag"><a href="https://github.com/Kunalgola7503/kunalgola_bitsom_ba_2511156_part4_tableau_dashboard" target="_blank" style="color:var(--accent); text-decoration:none;">[GitHub Link ↗]</a> · Python, SQL, Power BI, Tableau</span>
+      </div>
+      <ul class="entry-bullets">
+        <li>Cleaned and preprocessed <strong>4,200+ transactional records</strong>, analyzing customer purchasing behavior, seasonality, and profit-margin/return-rate fields.</li>
+        <li>Designed and executed an end-to-end <strong>A/B test on checkout optimization</strong> (n = 932), achieving a statistically significant <strong>conversion rate lift from 3.19% to 7.04%</strong> (p = 0.0005, <strong>+121% relative increase</strong>).</li>
+        <li>Trained a multivariate linear regression model in Python (<strong>R² = 0.84</strong>) to forecast sales volume and quantify the impact of pricing and promotional variables.</li>
+        <li>Constructed an interactive <strong>10-view Tableau dashboard</strong> providing stakeholders real-time visibility into regional profit margins, inventory trends, and return rates.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Employee Attrition Prediction & Workforce Analytics</span>
+        <span class="tech-stack-tag"><a href="https://github.com/Kunalgola7503/IBM-HR-Analytics-Attrition" target="_blank" style="color:var(--accent); text-decoration:none;">[GitHub Link ↗]</a> · Python, Scikit-learn, Pandas</span>
+      </div>
+      <ul class="entry-bullets">
+        <li>Analyzed <strong>1,470 employee records</strong> to uncover primary drivers of turnover, isolating overtime hours and low work-life balance as top indicators.</li>
+        <li>Engineered predictive classification models with Scikit-learn, achieving <strong>~87% classification accuracy</strong> with balanced precision and recall metrics.</li>
+        <li>Delivered actionable workforce retention recommendations for leadership to proactively mitigate voluntary attrition in high-risk departments.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">TechHealth — Multi-Agent AI Analytics & Wellness Assistant</span>
+        <span class="tech-stack-tag"><a href="https://github.com/Kunalgola7503/TechHealth-AI-Wellness-Assistant" target="_blank" style="color:var(--accent); text-decoration:none;">[GitHub Link ↗]</a> · Python, Gemini API, Agentic AI</span>
+      </div>
+      <ul class="entry-bullets">
+        <li>Architected a modular multi-agent system coordinating 4 specialized autonomous agents (HealthMonitor, RecommendationEngine, MedicalQA, Coordinator).</li>
+        <li>Integrated Google Gemini SDK with persistent multi-turn conversational session memory and context caching for automated health metric synthesis.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="section-heading">Education</div>
+    
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">BITSoM CEPD (BITS School of Management)</span>
+        <span class="entry-date">12/2025 – 07/2026</span>
+      </div>
+      <div class="entry-subtitle">
+        <span>Certification Program in Business Analytics with Gen & Agentic AI</span>
+        <span><strong>CGPA: 8.03 / 10</strong></span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">R.B.S. Engineering Technical Campus, Bichpuri (A.K.T.U.)</span>
+        <span class="entry-date">2022 – 2026</span>
+      </div>
+      <div class="entry-subtitle">
+        <span>Bachelor of Technology (B.Tech) in Electronics & Communication Engineering</span>
+        <span><strong>CGPA: 7.27 / 10</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section>
+    <div class="section-heading">Certifications & Accreditations</div>
+    <div class="cert-grid">
+      <div class="cert-item"><strong>Oracle Certified:</strong> OCI 2025 Certified AI Foundations Associate</div>
+      <div class="cert-item"><strong>Google & Kaggle:</strong> 5-Day AI Agents Intensive Certification</div>
+      <div class="cert-item"><strong>British Airways (Forage):</strong> Data Science & Customer Analytics Simulation</div>
+      <div class="cert-item"><strong>Deloitte & TATA (Forage):</strong> Data Analytics & GenAI Job Simulations</div>
+      <div class="cert-item"><strong>IIT (BHU):</strong> Statistella Data Analytics Competition (B.A.S.H 8.0)</div>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
